@@ -13,16 +13,18 @@ This tool patches on-fly System.Net.Security.dll used by HttpClient and HttpClie
 # Technical details
 
 During the investigation, it is found that the parent function which returns the result into the HttpClient is called VerifiedRemoteCertificate() which is in System.Net.Security.SecureChannel path.
-![image.png](attachment:4b9ec63c-c4b5-47e1-999c-6c766f62e657:image.png)
+![image](https://github.com/user-attachments/assets/d3c623ea-6511-4156-8f31-b12987271f30)
+
 
 Using Reflection and Harmony we are allowed to "Hook" this function to always return True during the Postfix execution.
 
 The entire write up is found here
 
-# How to work
+# How to use it
 1. Clone this repository in your local storage
 2. Open the solution and compile it (Download Harmony using NuGet)
 3. Go to Launcher binary and grab any .NET binary you wish you want to bypass SSL Pinning
 4. Profit!
 
-![image.png](attachment:b0aef72b-aa9e-429b-852a-33ad79319e4e:image.png)
+![image](https://github.com/user-attachments/assets/fa331b33-5644-4cb2-b98a-e3d754c41034)
+
