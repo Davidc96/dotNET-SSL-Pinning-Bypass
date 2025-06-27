@@ -18,7 +18,7 @@ During the investigation, it is found that the parent function which returns the
 
 Using Reflection and Harmony we are allowed to "Hook" this function to always return True during the Postfix execution.
 
-The entire write up is found here
+The entire write up is found here: https://blog.davidc96.com/ssl-pinning-bypass-a-binarios-net-framework-a-bajo-nivel-con-harmony-y-reflection/
 # Project structure
 - *SSLPinningBypass:* Test program to probe that it works
 - *libSSLPinningBypass:* This is where the magic is, it patches VerifyRemoteCertificate() using Harmony
