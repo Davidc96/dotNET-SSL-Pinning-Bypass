@@ -19,7 +19,12 @@ During the investigation, it is found that the parent function which returns the
 Using Reflection and Harmony we are allowed to "Hook" this function to always return True during the Postfix execution.
 
 The entire write up is found here
-
+# Project structure
+- *SSLPinningBypass:* Test program to probe that it works
+- *libSSLPinningBypass:* This is where the magic is, it patches VerifyRemoteCertificate() using Harmony
+- *MethodFinder:* Utility to find the QNAME and the function which verifies the server certificate in System.Net.Security.dll
+- *Launcher:* The second important project, it launches the binary as a reference and patches the DLL using libSSLPinningBypass.dll
+  
 # How to use it
 1. Clone this repository in your local storage
 2. Open the solution and compile it (Download Harmony using NuGet)
